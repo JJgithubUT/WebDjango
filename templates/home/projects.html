@@ -25,7 +25,11 @@
 {% for project in projects %}
 <div class="row project">  	
   <div class="col-lg-3 col-md-4 offset-lg-1">
-      <img class="img-fluid" src="{% static 'img/portfolio-bg.jpg' %}" alt="">
+    
+    {% if project.image %}
+      <img class="img-fluid" src="{{ project.image.url }}" alt="">
+    {% endif %}
+      
   </div>
 <div class="col-lg-7 col-md-8">
       <h2 class="section-heading title">{{ project.name }}</h2>   
